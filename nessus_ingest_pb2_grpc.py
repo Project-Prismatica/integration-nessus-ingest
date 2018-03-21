@@ -14,13 +14,8 @@ class NessusIngestStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.SayHello = channel.unary_unary(
-        '/projectprismatica.official.nessus.NessusIngest/SayHello',
-        request_serializer=nessus__ingest__pb2.HelloRequest.SerializeToString,
-        response_deserializer=nessus__ingest__pb2.HelloReply.FromString,
-        )
-    self.SayHelloAgain = channel.unary_unary(
-        '/projectprismatica.official.nessus.NessusIngest/SayHelloAgain',
+    self.Nessus = channel.unary_unary(
+        '/projectprismatica.official.nessus.NessusIngest/Nessus',
         request_serializer=nessus__ingest__pb2.HelloRequest.SerializeToString,
         response_deserializer=nessus__ingest__pb2.HelloReply.FromString,
         )
@@ -30,16 +25,9 @@ class NessusIngestServicer(object):
   """The service definition.
   """
 
-  def SayHello(self, request, context):
-    """Sends a greeting
+  def Nessus(self, request, context):
     """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def SayHelloAgain(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -47,13 +35,8 @@ class NessusIngestServicer(object):
 
 def add_NessusIngestServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'SayHello': grpc.unary_unary_rpc_method_handler(
-          servicer.SayHello,
-          request_deserializer=nessus__ingest__pb2.HelloRequest.FromString,
-          response_serializer=nessus__ingest__pb2.HelloReply.SerializeToString,
-      ),
-      'SayHelloAgain': grpc.unary_unary_rpc_method_handler(
-          servicer.SayHelloAgain,
+      'Nessus': grpc.unary_unary_rpc_method_handler(
+          servicer.Nessus,
           request_deserializer=nessus__ingest__pb2.HelloRequest.FromString,
           response_serializer=nessus__ingest__pb2.HelloReply.SerializeToString,
       ),

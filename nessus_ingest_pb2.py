@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='nessus_ingest.proto',
   package='projectprismatica.official.nessus',
   syntax='proto3',
-  serialized_pb=_b('\n\x13nessus_ingest.proto\x12!projectprismatica.official.nessus\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\xef\x01\n\x0cNessusIngest\x12l\n\x08SayHello\x12/.projectprismatica.official.nessus.HelloRequest\x1a-.projectprismatica.official.nessus.HelloReply\"\x00\x12q\n\rSayHelloAgain\x12/.projectprismatica.official.nessus.HelloRequest\x1a-.projectprismatica.official.nessus.HelloReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x13nessus_ingest.proto\x12!projectprismatica.official.nessus\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2z\n\x0cNessusIngest\x12j\n\x06Nessus\x12/.projectprismatica.official.nessus.HelloRequest\x1a-.projectprismatica.official.nessus.HelloReply\"\x00\x62\x06proto3')
 )
 
 
@@ -112,22 +112,13 @@ _NESSUSINGEST = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=120,
-  serialized_end=359,
+  serialized_start=119,
+  serialized_end=241,
   methods=[
   _descriptor.MethodDescriptor(
-    name='SayHello',
-    full_name='projectprismatica.official.nessus.NessusIngest.SayHello',
+    name='Nessus',
+    full_name='projectprismatica.official.nessus.NessusIngest.Nessus',
     index=0,
-    containing_service=None,
-    input_type=_HELLOREQUEST,
-    output_type=_HELLOREPLY,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SayHelloAgain',
-    full_name='projectprismatica.official.nessus.NessusIngest.SayHelloAgain',
-    index=1,
     containing_service=None,
     input_type=_HELLOREQUEST,
     output_type=_HELLOREPLY,
