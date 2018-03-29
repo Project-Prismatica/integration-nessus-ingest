@@ -14,8 +14,8 @@ class NessusIngestStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Nessus = channel.unary_unary(
-        '/projectprismatica.official.nessus.NessusIngest/Nessus',
+    self.NessusRaw = channel.unary_unary(
+        '/projectprismatica.official.nessus.NessusIngest/NessusRaw',
         request_serializer=nessus__ingest__pb2.HelloRequest.SerializeToString,
         response_deserializer=nessus__ingest__pb2.HelloReply.FromString,
         )
@@ -25,7 +25,7 @@ class NessusIngestServicer(object):
   """The service definition.
   """
 
-  def Nessus(self, request, context):
+  def NessusRaw(self, request, context):
     """
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,8 +35,8 @@ class NessusIngestServicer(object):
 
 def add_NessusIngestServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Nessus': grpc.unary_unary_rpc_method_handler(
-          servicer.Nessus,
+      'NessusRaw': grpc.unary_unary_rpc_method_handler(
+          servicer.NessusRaw,
           request_deserializer=nessus__ingest__pb2.HelloRequest.FromString,
           response_serializer=nessus__ingest__pb2.HelloReply.SerializeToString,
       ),

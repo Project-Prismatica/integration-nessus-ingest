@@ -11,7 +11,7 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 class NessusIngest(nessus_ingest_pb2_grpc.NessusIngestServicer):
 
-    def SayHello(self, request, context):
+    def NessusRaw(self, request, context):
         return nessus_ingest_pb2.HelloReply(message='Hello, %s!' % request.name)
 
 
